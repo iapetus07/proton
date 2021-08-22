@@ -1,9 +1,10 @@
 import discord
 import asyncio
+import os
 
 client = discord.Client()
 
-token = "ODc4NTMyMTI5MjEyOTg5NDYw.YSCizQ.wMFYY3lpTCL3vOrtcHJF-OFWIBM"
+token = access_token
 
 @client.event
 async def on_ready():
@@ -42,4 +43,5 @@ async def on_message(message):
         embed.set_thumbnail(url="https://photos.google.com/photo/AF1QipOAwbwl6mpkkUyQVYaCP2LK7KXMQFUkIEvtnOKE")
         await message.channel.send(embed=embed) 
 
+access_token = os.environ["BOT_TOKEN"]     
 client.run(token)
